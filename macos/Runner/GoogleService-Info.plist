@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>718433769016-6solchfsoppkchr930tml0akaseddio1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.718433769016-6solchfsoppkchr930tml0akaseddio1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>718433769016-g2fbeoi86mm6b8o3u9m93g785htnv9m6.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCq30phby1Xq9GRn6sdHmNtkuxIpBUTe5c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>718433769016</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.cold.mypetsPetshop</string>
+	<key>PROJECT_ID</key>
+	<string>betas-projects</string>
+	<key>STORAGE_BUCKET</key>
+	<string>betas-projects.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:718433769016:ios:fee3f10d3500174739f8cd</string>
+	<key>DATABASE_URL</key>
+	<string>https://betas-projects.firebaseio.com</string>
+</dict>
+</plist>
