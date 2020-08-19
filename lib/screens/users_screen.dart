@@ -18,7 +18,7 @@ class UsersScreen extends StatelessWidget {
             children: [
               BackButtonCustom(
                 function: () {
-                  UserModel.of(context).changePageContent(ResumeScreen());
+                  // UserModel.of(context).changePageContent(ResumeScreen());
                 },
               ),
               StreamBuilder<QuerySnapshot>(
@@ -46,8 +46,8 @@ class UsersScreen extends StatelessWidget {
                               return ItemUser(
                                 doc: dados,
                                 function: () {
-                                  model.changePageContent(
-                                      UserTodoDetailScreen(doc: dados));
+                                  // model.changePageContent(
+                                  //     UserTodoDetailScreen(doc: dados));
                                 },
                               );
                             },

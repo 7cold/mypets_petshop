@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mypets_petshop/configs/fonts.dart';
 import 'package:mypets_petshop/models/user_model.dart';
+import 'package:mypets_petshop/screens/products_screen.dart';
 import 'package:mypets_petshop/screens/users_screen.dart';
 import 'package:mypets_petshop/widgets/resume/card_resume.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -13,13 +14,19 @@ class ResumeScreen extends StatefulWidget {
 
 class _ResumeScreenState extends State<ResumeScreen> {
   var totalUsers;
+  var totalProducts;
   initGetUsers() async {
     totalUsers = await UserModel.of(context).getTotalUsers();
+  }
+
+  initGetProducts() async {
+    totalProducts = await UserModel.of(context).getTotalProducts();
   }
 
   void initState() {
     super.initState();
     initGetUsers();
+    initGetProducts();
   }
 
   @override
@@ -56,6 +63,17 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                 style: fontBold14White,
                               ),
                         rote: UsersScreen(),
+                      ),
+                      CardResume(
+                        img: "assets/icons/icon_products.png",
+                        label: "Num. de Produtos",
+                        labelButton: totalProducts == null
+                            ? CupertinoActivityIndicator()
+                            : Text(
+                                totalProducts.toString(),
+                                style: fontBold14White,
+                              ),
+                        rote: ProductsScreen(),
                       ),
                     ],
                   ),

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:mypets_petshop/configs/cores.dart';
+import 'package:mypets_petshop/configs/fonts.dart';
 import 'package:mypets_petshop/models/cart_model.dart';
 import 'package:mypets_petshop/screens/order_confirm_screen.dart';
 import 'package:mypets_petshop/widgets/cart/cart_item.dart';
@@ -37,6 +38,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         title: BackButtonCustom(
@@ -49,16 +51,18 @@ class _CartScreenState extends State<CartScreen> {
       body: ScopedModelDescendant<CartModel>(
         builder: (context, child, model) {
           if (model.products == null || model.products.length == 0) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Não há Produtos,\nvolte para continuar!",
-                  style: TextStyle(fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Não há Produtos,\nvolte para continuar!",
+                    style: fontBold20White,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             );
           } else {
             return ListView(

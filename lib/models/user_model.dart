@@ -2,12 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mypets_petshop/datas/pets_data.dart';
+import 'package:mypets_petshop/screens/products_screen.dart';
 import 'package:mypets_petshop/screens/resume_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class UserModel extends Model {
-  Widget page = ResumeScreen();
-
   // StorageReference reference = FirebaseStorage.instance.ref().child(
   //     'mypets_petshop/pets/${Path.basename(DateTime.now().toString() + '.jpg')}');
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -25,11 +24,6 @@ class UserModel extends Model {
   void addListener(VoidCallback listener) {
     super.addListener(listener);
     loadCurrentUser();
-  }
-
-  void changePageContent(Widget newPage) {
-    page = newPage;
-    notifyListeners();
   }
 
   refresh() {
@@ -116,6 +110,16 @@ class UserModel extends Model {
     print("getUsers");
     final doc = await Firestore.instance
         .collection("mypets_petshop/mypets_petshop/users/")
+        .getDocuments();
+    final totalt = doc.documents.length;
+    notifyListeners();
+    return totalt.toString();
+  }
+
+  Future<String> getTotalProducts() async {
+    print("getProd");
+    final doc = await Firestore.instance
+        .collection("mypets_petshop/mypets_petshop/produtos/")
         .getDocuments();
     final totalt = doc.documents.length;
     notifyListeners();

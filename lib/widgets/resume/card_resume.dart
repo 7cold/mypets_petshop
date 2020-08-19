@@ -21,7 +21,7 @@ class CardResume extends StatelessWidget {
       builder: (context, child, model) {
         return GestureDetector(
           onTap: () {
-            model.changePageContent(rote);
+            // model.changePageContent(rote);
           },
           child: Container(
             height: 160,
